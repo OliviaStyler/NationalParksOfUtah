@@ -6,124 +6,150 @@
   <meta name="viewport" content="width=device-width">
   <title>Home - Utah's National Parks</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="loader.css">
   <link rel="stylesheet" href="https://use.typekit.net/cyk0vyn.css">
-  <!-- <link rel="preload"> -->
+
+  <style>
+    /* Loader styles */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fffef8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      font-family: "Arial", sans-serif;
+      color: #3e5f3e;
+      transition: opacity 0.5s ease;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid #cce2cc;
+      border-top: 6px solid #3e5f3e;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 15px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animate-bottom {
+      animation: fadein 1s ease forwards;
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 
 <body onload="myFunction()" style="margin:0;">
-<div id="loader"><main>
-	<svg class="ip" viewBox="0 0 256 128" width="256px" height="128px" xmlns="http://www.w3.org/2000/svg">
-		<defs>
-			<linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0">
-				<stop offset="0%" stop-color="#5ebd3e" />
-				<stop offset="33%" stop-color="#ffb900" />
-				<stop offset="67%" stop-color="#f78200" />
-				<stop offset="100%" stop-color="#e23838" />
-			</linearGradient>
-			<linearGradient id="grad2" x1="1" y1="0" x2="0" y2="0">
-				<stop offset="0%" stop-color="#e23838" />
-				<stop offset="33%" stop-color="#973999" />
-				<stop offset="67%" stop-color="#009cdf" />
-				<stop offset="100%" stop-color="#5ebd3e" />
-			</linearGradient>
-		</defs>
-		<g fill="none" stroke-linecap="round" stroke-width="16">
-			<g class="ip__track" stroke="#ddd">
-				<path d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56"/>
-				<path d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64"/>
-			</g>
-			<g stroke-dasharray="180 656">
-				<path class="ip__worm1" stroke="url(#grad1)" stroke-dashoffset="0" d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56"/>
-				<path class="ip__worm2" stroke="url(#grad2)" stroke-dashoffset="358" d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64"/>
-			</g>
-		</g>
-	</svg>
-</main></div>
-<div style="display:none;" id="myDiv" class="animate-bottom">
-  <div id="banner">
-    <h1>Utah's National Parks</h1>
-    <!-- <img class="banner" src="banner.png"> -->
+
+  <!-- 🌄 Spinner Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Exploring parks...</p>
   </div>
-  <div id="links-wrapper">
-    <!-- nav Link -->
-    <div class="nav-link" id="picNav">
-      <a href="arches.html"><span class="nav-special">Arches</span>
-        <img src="navPhotos/navBannerArches-1.png"
-          class="hoverColor"></a>
+
+  <!-- 🌲 Main Page Content -->
+  <div style="display:none;" id="myDiv" class="animate-bottom">
+    <div id="banner">
+      <h1>Utah's National Parks</h1>
+    </div>
+    <div id="links-wrapper">
+      <div class="nav-link" id="picNav">
+        <a href="arches.html"><span class="nav-special">Arches</span>
+          <img src="navPhotos/navBannerArches-1.png" class="hoverColor"></a>
+      </div>
+
+      <div class="nav-link" id="picNav">
+        <a href="bryceCanyon.html"><span class="nav-special">Bryce Canyon</span>
+          <img src="navPhotos/navBannerBryce-1.png" class="hoverColor"></a>
+      </div>
+
+      <div class="nav-link" id="picNav">
+        <a href="canyonlands.html"><span class="nav-special">Canyonlands</span>
+          <img src="navPhotos/navBannerCanyonlands-1.png" class="hoverColor"></a>
+      </div>
+
+      <div class="nav-link" id="picNav">
+        <a href="capitolReef.html"><span class="nav-special">Capitol Reef</span>
+          <img src="navPhotos/navBannerCapitol-1.png" class="hoverColor"></a>
+      </div>
+
+      <div class="nav-link zion" id="picNav">
+        <a href="zion.html"><span class="nav-special">Zion</span>
+          <img src="navPhotos/navBannerZion-1.png" class="hoverColor"></a>
+      </div>
     </div>
 
-    <div class="nav-link" id="picNav">
-      <a href="bryceCanyon.html"><span class="nav-special">Bryce Canyon</span><img src="navPhotos/navBannerBryce-1.png"
-          class="hoverColor"></a>
+    <br>
+    <div class="container">
+      <div class="intro">
+        <h2>The Big Five</h2>
+        <p>Utah's national parks boast a breathtaking collection of natural wonders, captivating visitors with their
+          striking landscapes and rich geological diversity. From the towering sandstone cliffs of Zion National Park to
+          the otherworldly rock formations of Arches National Park. With its unique combination of red rock canyons, lush
+          forests, and pristine alpine meadows, Utah offers a truly unparalleled experience in the realm of national
+          parks. A visit to Utah's national parks is an invitation to immerse oneself in the untamed beauty and
+          remarkable splendor of the American West.</p>
+      </div>
+      <div class="image">
+        <img src="photos/nationalparkIntro.jpeg" alt="" height="400px">
+      </div>
     </div>
 
-    <!-- nav Link -->
-    <div class="nav-link" id="picNav">
-      <a href="canyonlands.html"><span class="nav-special">Canyonlands</span><img
-          src="navPhotos/navBannerCanyonlands-1.png" class="hoverColor"></a>
+    <div class="maps">
+      <iframe src="https://my.atlist.com/map/4ae5da36-f9a0-415d-9b79-3428629b3794?share=true"
+        allow="geolocation 'self' https://my.atlist.com" width="100%" height="400px" frameborder="0" scrolling="no"
+        allowfullscreen></iframe>
     </div>
 
-    <!-- nav Link -->
-    <div class="nav-link" id="picNav">
-      <a href="capitolReef.html"><span class="nav-special">Capitol Reef</span><img
-          src="navPhotos/navBannerCapitol-1.png" class="hoverColor"></a>
+    <div class="social">
+      <p class="social_icon"><img src="icons/nationalpark4.png" width="150px" alt="" class="thumbnail3" /></p>
+      <p class="social_icon"><img src="icons/nationalpark5.png" width="150px" alt="" class="thumbnail3" /></p>
+      <p class="social_icon"><img src="icons/NationalParks-1.png" width="150px" alt="" class="thumbnail3" /></p>
+      <p class="social_icon"><img src="icons/nationalparks3.png" width="150px" alt="" class="thumbnail3" /></p>
+      <p class="social_icon"><img src="icons/nationalparks2.png" width="150px" alt="" class="thumbnail3" /></p>
     </div>
 
-    <div class="nav-link zion" id="picNav">
-      <a href="zion.html"><span class="nav-special">Zion</span><img src="navPhotos/navBannerZion-1.png"
-          class="hoverColor"></a>
+    <hr class="line">
+    <div class="footer">
+      <h1>National Parks of Utah</h1>
+      <h2>Made with love by Olivia Styler</h2>
+      <h3>This website was created solely for educational purposes.</h3>
     </div>
-
   </div>
-  <!-- <div class="testing"></div> -->
-  <br>
-  <div class="container">
-    <div class="intro">
-      <h2>The Big Five</h2>
-      <p>Utah's national parks boast a breathtaking collection of natural wonders, captivating visitors with their
-        striking landscapes and rich geological diversity. From the towering sandstone cliffs of Zion National Park to
-        the otherworldly rock formations of Arches National Park. With its unique combination of red rock canyons, lush
-        forests, and pristine alpine meadows, Utah offers a truly unparalleled experience in the realm of national
-        parks. A visit to Utah's national parks is an invitation to immerse oneself in the untamed beauty and remarkable
-        splendor of the American West.</p>
-    </div>
-    <div class=image>
-      <img src="photos/nationalparkIntro.jpeg" alt="" height="400px">
-    </div>
-    
-  </div>
-  <div class="maps">
-<iframe src="https://my.atlist.com/map/4ae5da36-f9a0-415d-9b79-3428629b3794?share=true" allow="geolocation 'self' https://my.atlist.com" width="100%" height="400px" frameborder="0" scrolling="no" allowfullscreen></iframe>
-    </div>
-  <div class="social">
-    <p class="social_icon"><img src="icons/nationalpark4.png" width="150px" alt="" class="thumbnail3" /></p>
-    <p class="social_icon"><img src="icons/nationalpark5.png" width="150px" alt="" class="thumbnail3" /></p>
-    <p class="social_icon"><img src="icons/NationalParks-1.png" width="150px" alt="" class="thumbnail3" /></p>
-    <p class="social_icon"><img src="icons/nationalparks3.png" width="150px" alt="" class="thumbnail3" /></p>
-    <p class="social_icon"><img src="icons/nationalparks2.png" width="150px" alt="" class="thumbnail3" /></p>
 
-  </div>
-  <hr class="line">
-  <div class="footer">
-    <h1>National Parks of Utah</h1>
-    <h2>Made with love by Olivia Styler</h2>
-    <h3>This website was created solely for educational purposes.</h3>
-
-  </div>
-</div>
+  <!-- ⏳ Loader Script -->
   <script>
-var myVar;
-
-function myFunction() {
-  myVar = setTimeout(showPage, 3000);
-}
-
-function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
-}
-</script>
+    function myFunction() {
+      setTimeout(() => {
+        const loader = document.getElementById("loader");
+        loader.style.opacity = "0";
+        setTimeout(() => {
+          loader.style.display = "none";
+          document.getElementById("myDiv").style.display = "block";
+        }, 500); // allow fade out to finish
+      }, 2000); // 2 second load screen
+    }
+  </script>
 </body>
 
 </html>
