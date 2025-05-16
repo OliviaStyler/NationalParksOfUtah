@@ -244,3 +244,61 @@ footer .footer_column p {
 .button-text:hover {
   color: grey;
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .intro, .image {
+    max-width: 100%;
+    flex-basis: 100%;
+    padding: 0;
+  }
+
+  .intro {
+    font-size: 18px;
+  }
+
+  .image img {
+    height: auto;
+    width: 100%;
+  }
+
+  .social {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social_icon {
+    width: 100%;
+  }
+
+  #links-wrapper, .links-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-special {
+    font-size: 20px;
+    margin-top: 10px;
+    position: static;
+  }
+
+  .footer h1, .footer h2, .footer h3 {
+    font-size: 16px;
+  }
+
+  .button {
+    width: 90%;
+    font-size: 16px;
+  }
+
+@media screen and (max-width: 768px) {
+  .nav-link:hover img {
+    transform: none;
+  }
+}
+}
+
