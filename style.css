@@ -245,6 +245,18 @@ footer .footer_column p {
   color: grey;
 }
 
+/* oliviaLogo Placement */
+.cornerLogo {
+  position: fixed;   /* stays put while scrolling */
+  bottom: 10px;      /* distance from bottom */
+  right: 10px;       /* distance from right */
+  width: 50px;       /* adjust as needed */
+  height: auto;      /* keep aspect ratio */
+  z-index: 1000;     /* makes sure it’s above other elements */
+  opacity: 0.5;
+}
+
+
 @media screen and (max-width: 768px) {
   .container {
     flex-direction: column;
